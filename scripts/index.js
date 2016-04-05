@@ -33,8 +33,11 @@ function disconnect() {
   }
   $disconnectBtn.classList.add('disabled');
 }
-function connect(url) {
-  var opts = {autoConnect:false,forceNew:true};
+function connect(url, opts) {
+  opts = opts || {};
+  opts.autoConnect = opts.autoConnect || false;
+  opts.forceNew = opts.forceNew || true;
+  
   console.log("connecting to: ",url,opts);
   disconnect();
   _socket = io(url,opts);
