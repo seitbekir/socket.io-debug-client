@@ -9,8 +9,11 @@
 <body>
   <iframe name='hidden-iframe' class='hidden' src='about:blank'></iframe>
   <form id='settings' class='row collapse' target='hidden-iframe'>
-    <div class='small-6 medium-8 large-10 columns'>
+    <div class='small-2 medium-3 large-4 columns'>
       <input type='url' id='socket-url' name='socket-url' required placeholder='url' autofocus autocomplete='on' autosave='socket.io-debug-client-url'>
+    </div>
+    <div class='small-4 medium-5 large-6 columns'>
+      <textarea id='socket-creditionals' name='socketCreditionals' placeholder='creditionals'><textarea>
     </div>
     <div class='small-3 medium-2 large-1 columns'>
       <button type='submit' class='postfix button connect' type='submit'>Connect!</button>
@@ -19,6 +22,9 @@
       <button type='button' class='postfix button disconnect alert disabled' type='submit'>Disconnect</button>
     </div>
   </form>
+  <div class='row collapse'>
+    <pre id='jsonpreview' class='small-offset-2 medium-offset-3 large-offset-4 small-4 medium-5 large-6 columns'></pre>
+  </div>
   <section id='timelinemenu' class='row'>
     <div class='menu'> 
       <ul>
